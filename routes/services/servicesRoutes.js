@@ -6,7 +6,7 @@ const {
     getService,
     updateService,
     deleteService
-} = require("../controllers/servicesControllers");
+} = require("../../controllers/services/servicesControllers");
 
 router.route("/").get(getServices).post(createService);
 router.route("/:id").get(getService).put(updateService).delete(deleteService);
