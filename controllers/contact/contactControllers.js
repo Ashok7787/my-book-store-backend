@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler");
-const Contact = require("../models/contactModels");
+const Contact = require("../../models/contact/contactModels");
 //@desc Get all contacts
 //@route GET /api/contacts
 //@access private
