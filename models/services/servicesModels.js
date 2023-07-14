@@ -8,7 +8,7 @@ const servicesSchema = mongoose.Schema(
     },   
     subCategory: {
       type: String,
-      required: [true, "Please add the sub-category name"],
+     // required: [true, "Please add the sub-category name"],
     },
   },
   {

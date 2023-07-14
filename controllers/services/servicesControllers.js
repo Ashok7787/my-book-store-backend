@@ -14,7 +14,7 @@ const getServices = asyncHandler(async (req, res) => {
 const createService = asyncHandler(async (req, res) => {
   console.log("The request body : ", req.body);
   const { category, subCategory } = req.body;
-  if (!category || !subCategory) {
+  if (!category ) {
     res.status(400);
     throw new Error("All fields are mandatory !");
   }
