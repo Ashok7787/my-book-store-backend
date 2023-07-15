@@ -6,7 +6,7 @@ const servicesSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add the category name"],
     },   
-    subCategory: {
+    image: {
       type: String,
      // required: [true, "Please add the sub-category name"],
     },
