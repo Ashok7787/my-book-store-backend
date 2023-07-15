@@ -13,14 +13,14 @@ const getServices = asyncHandler(async (req, res) => {
 //@access private
 const createService = asyncHandler(async (req, res) => {
   console.log("The request body : ", req.body);
-  const { category, subCategory } = req.body;
-  if (!category ) {
+  const { category, image } = req.body;
+  if (!category || !image) {
     res.status(400);
     throw new Error("All fields are mandatory !");
   }
   const service = await Services.create({
     category,
-    subCategory,
+    image,
   });
   res.status(201).json(service);
 });

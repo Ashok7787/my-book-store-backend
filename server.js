@@ -21,7 +21,9 @@ app.use("/api/users", require("./routes/user/userRoutes"));
 app.use("/api/services", require("./routes/services/servicesRoutes"));
 app.use("/api/books", require("./routes/book/bookRoutes"));
 app.use(errorHandler);
-
+app.get("/",(req,res)=>(
+  res.send("api working")
+))
 app.listen(port,() => {
     console.log(`server running on port ${port}`);
 }) ;
