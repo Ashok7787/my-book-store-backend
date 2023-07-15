@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 app.use(
     cors(
       {
-      origin:"http://localhost:3000",
+      origin:["http://localhost:3000", "https://bookshop-livid.vercel.app/" ],
       methods: ["GET, POST, PUT, DELETE"],
       credentials: true
     }
