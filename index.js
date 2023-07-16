@@ -7,10 +7,22 @@ connectDB();
 const app = express();
 const port = process.env.PORT || 5000;
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://bookshop-git-main-ashok7787.vercel.app','https://bookshop-2r9c9udxl-ashok7787.vercel.app','https://bookshop-livid.vercel.app','http://localhost:3000');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://bookshop-git-main-ashok7787.vercel.app"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://bookshop-2r9c9udxl-ashok7787.vercel.app"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://bookshop-livid.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   next();
 });
 // app.use(
@@ -28,9 +40,7 @@ app.use("/api/users", require("./routes/user/userRoutes"));
 app.use("/api/services", require("./routes/services/servicesRoutes"));
 app.use("/api/books", require("./routes/book/bookRoutes"));
 app.use(errorHandler);
-app.get("/",(req,res)=>(
-  res.send("api working")
-))
-app.listen(port,() => {
-    console.log(`server running on port ${port}`);
-}) ;
+app.get("/", (req, res) => res.send("api working"));
+app.listen(port, () => {
+  console.log(`server running on port ${port}`);
+});
